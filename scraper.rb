@@ -11,7 +11,7 @@ else
 end
 puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment";
 
-starting_url = 'http://pdonline.goldcoast.qld.gov.au/masterview/modules/ApplicationMaster/default.aspx?page=found&1=' +period+ '&4a=BLD%27,%27MCU%27,%27OPW%27,%27ROL&6=F'
+starting_url = 'https://cogc.cloud.infor.com/ePathway/epthprod/Web/GeneralEnquiry/EnquiryLists.aspx?ModuleCode=LAP=' +period+ '&4a=BLD%27,%27MCU%27,%27OPW%27,%27ROL&6=F'
 comment_url = 'mailto:gcccmail@goldcoast.qld.gov.au'
 
 def clean_whitespace(a)

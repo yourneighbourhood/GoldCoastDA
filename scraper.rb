@@ -11,8 +11,9 @@ else
 end
 puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment";
 
-starting_url = 'https://cogc.cloud.infor.com/ePathway/epthprod/Web/GeneralEnquiry/EnquiryLists.aspx?ModuleCode=LAP='
-comment_url = 'mailto:gcccmail@goldcoast.qld.gov.au'
+starting_url = 'https://cogc.cloud.infor.com/ePathway/epthprod/Web/GeneralEnquiry/EnquiryLists.aspxx?page=found" + period + url_end
+
+agent = Mechanize.new
 
 def clean_whitespace(a)
   a.gsub("\r", ' ').gsub("\n", ' ').squeeze(" ").strip

@@ -11,9 +11,8 @@ else
 end
 puts "Getting '" + period + "' data, changable via MORPH_PERIOD environment";
 
-starting_url = 'https://cogc.cloud.infor.com/ePathway/epthprod/Web/GeneralEnquiry/EnquiryLists.aspxx?page=found" + period + url_end
-
-agent = Mechanize.new
+starting_url = 'http://pdonline.goldcoast.qld.gov.au/masterview/modules/ApplicationMaster/default.aspx?page=found&1=' +period+ '&4a=BLD%27,%27MCU%27,%27OPW%27,%27ROL&6=F'
+comment_url = 'mailto:gcccmail@goldcoast.qld.gov.au'
 
 def clean_whitespace(a)
   a.gsub("\r", ' ').gsub("\n", ' ').squeeze(" ").strip
@@ -67,9 +66,6 @@ begin
 rescue
   totalPages = 1
 end
-
-years = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007]
-periodstrs = years.map(&:to_s).product([*'-01'..'-12'].reverse).map(&:join).select{|d| d <= Date.today.to_s[0..-3]}.reverse
 
 # run a loop if there are more than a page
 (2..totalPages).each do |i|
